@@ -4,7 +4,8 @@
   "description": "Chat aggregator",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./app.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/2trill2spill/chatmsg/issues"
   },
-  "homepage": "https://github.com/2trill2spill/chatmsg#readme"
+  "homepage": "https://github.com/2trill2spill/chatmsg#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "mongoose": "^4.6.0"
+  }
 }
