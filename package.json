@@ -19,7 +19,7 @@
   "homepage": "https://github.com/2trill2spill/chatmsg#readme",
   "dependencies": {
     "body-parser": "^1.15.2",
-    "express": "^4.14.0",
-    "mongoose": "^4.6.0"
+    "deepstream": "0.0.0",
+    "express": "^4.14.0"
   }
 }
