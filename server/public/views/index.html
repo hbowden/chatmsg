@@ -6,8 +6,11 @@
     <link rel="stylesheet" href="/styles/style.css" />
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.min.js"></script>
+    <script type="text/javascript" src="/scripts/clientapp.js"></script>
+      <script type="text/javascript" src="/scripts/controllers/homeController.js"></script>
   </head>
-  <body>
+  <body ng-app="app" ng-controller="HomeController">
+    <main ng-view></main>
+</body>
 
-  </body>
 </html>
