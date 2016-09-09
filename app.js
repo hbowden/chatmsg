@@ -3,7 +3,7 @@ var app = express();
 var bodyParser = require('body-parser');
 var path = require('path');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/heroes');
+mongoose.connect(process.env.DBSTRING || 'mongodb://localhost/heroes');
 
 // Serve back static files
 app.use(bodyParser.json());
