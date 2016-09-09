@@ -1,11 +1,11 @@
 {
   "name": "chatmsg",
   "version": "1.0.0",
-  "description": "Chat aggregator",
+  "description": "Chat aggregating web application",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./app.js"
+    "start": "node server/app.js"
   },
   "repository": {
     "type": "git",
