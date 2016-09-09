@@ -20,11 +20,11 @@ app.get('/', function(req, res) {
 })
 
 /* Try to get our port from the enviroment variable PORT, if the
-   enviroment variable PORT is not set default to 5000.  */
+   enviroment variable PORT is not set, default to 5000.  */
 app.set('port', process.env.PORT || 5000);
 
 /* Setup deepstream.io server. We use deepstream to sync message history
-   across clients for messaging services that don't automatically do this. */
+   across clients for messaging services that don't allow us to do this. */
 var deepstream = new Deepstream();
 deepstream.set('httpServer', server );
 deepstream.start();
