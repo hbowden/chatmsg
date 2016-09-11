@@ -1,5 +1,8 @@
 app.controller('HomeController', ['$scope', '$http', function($scope, $http) {
-
-  console.log("Here");
-
+  $scope.handleRegister = function() {
+    console.log("Clicked register");
+  }
+  $scope.handleLogin = function() {
+    console.log("Clicked login");
+  }
 }]);
