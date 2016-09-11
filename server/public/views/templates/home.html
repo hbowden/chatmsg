@@ -1,2 +1,17 @@
-<md-button class="md-raised md-primary md-hue-1">Register</md-button>
-<md-button class="md-raised md-primary md-hue-1">Login</md-button>
+<md-toolbar class="md-theme-indigo">
+  <div class="md-toolbar-tools">
+         <h2 class="md-flex">HTML 5</h2>
+      </div>
+   </md-toolbar>
+   <md-content flex layout-padding>
+      <p>HTML5 is the next major revision of the HTML standard superseding HTML 4.01, XHTML 1.0, and XHTML 1.1. HTML5 is a standard for structuring and presenting content on the World Wide Web.</p>
+      <p>HTML5 is a cooperation between the World Wide Web Consortium (W3C) and the Web Hypertext Application Technology Working Group (WHATWG).</p>
+      <p>The new standard incorporates features like video playback and drag-and-drop that have been previously dependent on third-party browser plug-ins such as Adobe Flash, Microsoft Silverlight, and Google Gears.</p>
+      <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+        <div layout="row" layout-align="center center" flex>
+          <md-button class="md-primary" ng-click="handleRegister()">Register</md-button>
+          <md-button class="md-primary" ng-click="handleLogin()">Login</md-button>
+        </div>
+      </section>
+  </div>
+</md-content>
