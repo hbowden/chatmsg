@@ -4,6 +4,7 @@ var http = require('http');
 var app = express();
 var bodyParser = require('body-parser');
 var path = require('path');
+var user = require('./routes/user');
 // var mongoose = require('mongoose');
 // mongoose.connect(process.env.DBSTRING || 'mongodb://localhost/heroes');
 
@@ -11,8 +12,11 @@ var path = require('path');
 var server = http.createServer(app);
 
 /* Serve back static files */
-app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, './public')));
+
+/* Middleware. */
+app.use(bodyParser.json());
+app.use('/user', user);
 
 /* Handle index file separately */
 app.get('/', function(req, res) {
