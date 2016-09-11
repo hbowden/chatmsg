@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/2trill2spill/chatmsg#readme",
   "dependencies": {
+    "bcrypt": "^0.8.7",
     "body-parser": "^1.15.2",
     "deepstream": "0.0.0",
     "express": "^4.14.0"
