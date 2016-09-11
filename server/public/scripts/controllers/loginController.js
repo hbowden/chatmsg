@@ -11,6 +11,9 @@ app.controller('LoginController', ['$scope', '$http', '$location', 'user', funct
     to the server for registration. */
     user.register($scope.user).then(function(response) {
       console.log("response: ", response);
+
+      /* Clear form fields. */
+      $scope.user = {};
     });
   }
 }]);
