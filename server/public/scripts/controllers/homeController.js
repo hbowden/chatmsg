@@ -1,8 +1,10 @@
-app.controller('HomeController', ['$scope', '$http', function($scope, $http) {
+app.controller('HomeController', ['$scope', '$http', '$location', function($scope, $http, $location) {
   $scope.handleRegister = function() {
-    console.log("Clicked register");
+    /* Change to the registration view. */
+    $location.path('register');
   }
   $scope.handleLogin = function() {
-    console.log("Clicked login");
+    /* Change to the login view. */
+    $location.path('login');
   }
 }]);
