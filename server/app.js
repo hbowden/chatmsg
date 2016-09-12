@@ -5,8 +5,24 @@ var app = express();
 var bodyParser = require('body-parser');
 var path = require('path');
 var user = require('./routes/user');
-// var mongoose = require('mongoose');
-// mongoose.connect(process.env.DBSTRING || 'mongodb://localhost/heroes');
+var mongoose = require('mongoose');
+var passport = require('./strategies/userStrategy');
+var session = require('express-session');
+
+mongoose.connect(process.env.DBSTRING || 'mongodb://localhost/heroes');
+
+// Passport Session Configuration //
+app.use(session({
+   secret: 'secret',
+   key: 'user',
+   resave: 'true',
+   saveUninitialized: false,
+   cookie: { maxage: 60000, secure: false }
+}));
+
+// start up passport sessions
+app.use(passport.initialize());
+app.use(passport.session());
 
 /* Explicitly create a HTTP server from our express app. */
 var server = http.createServer(app);
@@ -22,6 +38,14 @@ app.use('/user', user);
 app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname, './public/views/index.html'));
 })
+
+app.post('/',
+    passport.authenticate('local', {
+        // request stays within node/express and is routed as a new request
+        successRedirect: '/user',   // goes to routes/user.js
+        failureRedirect: '/'        // goes to get '/' route below
+    })
+);
 
 /* Try to get our port from the enviroment variable PORT, if the
    enviroment variable PORT is not set, default to 5000.  */

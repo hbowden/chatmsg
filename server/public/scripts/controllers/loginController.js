@@ -10,10 +10,27 @@ app.controller('LoginController', ['$scope', '$http', '$location', 'user', funct
     /* Submit the user's credentials, ie username and password
     to the server for registration. */
     user.register($scope.user).then(function(response) {
-      console.log("response: ", response);
-
+      if(response.status != 200) {
+        console.log("Can't create user");
+        return;
+      }
       /* Clear form fields. */
       $scope.user = {};
+
+      /* Send user to the login page. */
+      $location.path('/login');
     });
   }
+
+  $scope.loginUser = function() {
+    user.login($scope.user).then(function(response) {
+      if(response.status != 200) {
+        console.log("Can't create user");
+        return;
+      }
+      /* Clear form fields. */
+      $scope.user = {};
+
+  });
+}
 }]);

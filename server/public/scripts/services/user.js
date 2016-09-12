@@ -6,10 +6,8 @@ app.factory('user', ['$http', function($http) {
       data: user,
       url: '/user'
     }).then(function successCallback(response) {
-      console.log("Success: ", response);
-      return response.data;
+      return response;
     }, function errorCallback(response) {
-      console.log("Error: ", response);
       return response;
     });
     return promise;
@@ -19,8 +17,22 @@ app.factory('user', ['$http', function($http) {
     return true;
   }
 
+  function login(user) {
+    var promise = $http({
+      method: 'POST',
+      data: user,
+      url: '/'
+    }).then(function successCallback(response) {
+      return response;
+    }, function errorCallback(response) {
+      return response;
+    });
+    return promise;
+  }
+
   return {
     register: register,
-    validate: validate
+    validate: validate,
+    login: login,
   }
 }]);
