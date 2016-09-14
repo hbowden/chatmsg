@@ -30,7 +30,8 @@ app.controller('LoginController', ['$scope', '$http', '$location', 'user', funct
       }
       /* Clear form fields. */
       $scope.user = {};
-
+      user.setUser(response.data);
+      $location.path('/chat');
   });
 }
 }]);

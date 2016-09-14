@@ -1,4 +1,5 @@
 app.factory('user', ['$http', function($http) {
+  var currentUser = {};
 
   function register(user) {
     var promise = $http({
@@ -30,9 +31,19 @@ app.factory('user', ['$http', function($http) {
     return promise;
   }
 
+  function getUser() {
+    return currentUser;
+  }
+
+  function setUser(user) {
+    currentUser = user;
+  }
+
   return {
     register: register,
     validate: validate,
     login: login,
+    setUser: setUser,
+    getUser: getUser
   }
 }]);

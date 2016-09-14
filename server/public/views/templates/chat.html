@@ -1,0 +1,24 @@
+<md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="true">
+  <md-toolbar class="md-tall md-hue-2">
+    <span flex></span>
+    <div layout="column" class="md-toolbar-tools-bottom inset">
+      <user-avatar></user-avatar>
+      <span></span>
+      <div>{{user.username}}</div>
+    </div>
+      </md-toolbar>
+      <md-list>
+      <md-item ng-repeat="contact in contacts">
+        <a>
+          <md-item-content md-ink-ripple layout="row" layout-align="start center">
+            <div class="inset">
+              <ng-md-icon icon="{{contact.icon}}"></ng-md-icon>
+            </div>
+            <div class="inset">{{contact.title}}
+            </div>
+          </md-item-content>
+          <md-divider></md-divider>
+        </a>
+      </md-item>
+    </md-list>
+    </md-sidenav>
