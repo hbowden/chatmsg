@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ngMaterial', 'ngRoute']);
+var app = angular.module('app', ['ngRoute']);
 
 app.config(['$routeProvider', function($routeProvider) {
     $routeProvider
@@ -12,7 +12,7 @@ app.config(['$routeProvider', function($routeProvider) {
           templateUrl: '/views/templates/login.html'
         })
         .when('/chat', {
-          templateUrl: '/views/templates/chatmenu.html',
+          templateUrl: '/views/templates/chat.html',
           controller: 'ChatController'
         })
         .otherwise({
