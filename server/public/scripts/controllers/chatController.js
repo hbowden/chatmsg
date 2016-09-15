@@ -7,12 +7,16 @@ app.controller('ChatController', ['$scope', '$mdBottomSheet','$mdSidenav', '$mdD
   $scope.activity = user.messages;
   $scope.user = user;
 
+  /* Check for a contact list. If it's
+  empty fill the contact list with empty contacts. */
   if($scope.contacts.length == 0) {
     $scope.contact = [];
     for(var i = 0; i < 25; i++) {
       $scope.contacts.push({title: ''});
     }
   }
+
+
 }]);
 
 app.directive('userAvatar', function() {
