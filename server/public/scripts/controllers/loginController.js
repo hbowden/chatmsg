@@ -30,6 +30,7 @@ app.controller('LoginController', ['$scope', '$http', '$location', 'user', funct
       }
       /* Clear form fields. */
       $scope.user = {};
+      console.log("Data: ", response.data)
       user.setUser(response.data);
       $location.path('/chat');
   });

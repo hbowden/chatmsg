@@ -9,6 +9,7 @@ var mongoose = require('mongoose');
 var passport = require('./strategies/userStrategy');
 var session = require('express-session');
 var MongoDBStorageConnector = require('deepstream.io-storage-mongodb');
+var 
 
 var connectionString = 'mongodb://localhost/heroes';
 mongoose.connect(connectionString);
