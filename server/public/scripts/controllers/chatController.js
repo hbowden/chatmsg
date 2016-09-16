@@ -1,7 +1,4 @@
 app.controller('ChatController', ['$scope', '$http', 'deepstream', 'user', '$location', function($scope, $http, deepstream, user, $location) {
-  $scope.showServiceModal = false;
-  $scope.showContactModal = false;
-
   /* Grab our user information and use it
     to set $scope variables, we use these
     variables to build the view. */
@@ -34,23 +31,5 @@ app.controller('ChatController', ['$scope', '$http', 'deepstream', 'user', '$loc
     });
   } else {
     console.log("Not empty");
-  }
-
-  $scope.toggleServiceModal = function() {
-    if($scope.showServiceModal === false) {
-      $scope.showServiceModal = true;
-    } else {
-      $scope.showServiceModal = false;
-    }
-    console.log("Service: ", $scope.showServiceModal)
-  }
-
-  $scope.toggleContactModal = function() {
-    if($scope.showContactModal === false) {
-      $scope.showContactModal = true;
-    } else {
-      $scope.showContactModal = false;
-    }
-    console.log("Contact: ", $scope.showContactModal)
   }
 }]);
