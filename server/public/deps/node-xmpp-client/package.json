@@ -1,0 +1,109 @@
+{
+  "_args": [
+    [
+      "node-xmpp-client",
+      "/Users/nah/Desktop/chatmsg"
+    ]
+  ],
+  "_from": "node-xmpp-client@latest",
+  "_id": "node-xmpp-client@3.0.2",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/node-xmpp-client",
+  "_nodeVersion": "6.2.2",
+  "_npmOperationalInternal": {
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/node-xmpp-client-3.0.2.tgz_1467365084974_0.5126570085994899"
+  },
+  "_npmUser": {
+    "email": "sonny@fastmail.net",
+    "name": "sonny"
+  },
+  "_npmVersion": "3.10.3",
+  "_phantomChildren": {
+    "options": "0.0.6",
+    "ultron": "1.0.2"
+  },
+  "_requested": {
+    "name": "node-xmpp-client",
+    "raw": "node-xmpp-client",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/node-xmpp-client/-/node-xmpp-client-3.0.2.tgz",
+  "_shasum": "0202bc8a8a03bd2a8223006ffb1d5057fa1b79d6",
+  "_shrinkwrap": null,
+  "_spec": "node-xmpp-client",
+  "_where": "/Users/nah/Desktop/chatmsg",
+  "browser": {
+    "crypto": false,
+    "path": false,
+    "request": "browser-request",
+    "ws": false
+  },
+  "bugs": {
+    "url": "http://github.com/node-xmpp/node-xmpp/issues"
+  },
+  "dependencies": {
+    "browser-request": "^0.3.3",
+    "debug": "^2.2.0",
+    "md5.js": "^1.3.3",
+    "minimist": "^1.2.0",
+    "node-xmpp-core": "^5.0.0",
+    "request": "^2.65.0",
+    "ws": "^1.1.1"
+  },
+  "description": "XMPP client for JavaScript",
+  "devDependencies": {
+    "node-xmpp-server": "^2.1.3"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "0202bc8a8a03bd2a8223006ffb1d5057fa1b79d6",
+    "tarball": "https://registry.npmjs.org/node-xmpp-client/-/node-xmpp-client-3.0.2.tgz"
+  },
+  "homepage": "http://github.com/node-xmpp/node-xmpp",
+  "keywords": [
+    "client",
+    "XMPP",
+    "C2S",
+    "WebSocket",
+    "BOSH"
+  ],
+  "license": "MIT",
+  "maintainers": [
+    {
+      "email": "lloyd@evilprofessor.co.uk",
+      "name": "lloydwatkin"
+    },
+    {
+      "email": "chris@lollyrock.com",
+      "name": "chris-rock"
+    },
+    {
+      "email": "astro@spaceboyz.net",
+      "name": "astro"
+    },
+    {
+      "email": "sonny@fastmail.net",
+      "name": "sonny"
+    }
+  ],
+  "name": "node-xmpp-client",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/node-xmpp/node-xmpp.git"
+  },
+  "scripts": {
+    "bundle": "../../node_modules/.bin/browserify -s XMPP index.js -o browserify.js",
+    "prepublish": "npm run bundle"
+  },
+  "version": "3.0.2"
+}

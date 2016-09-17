@@ -1,4 +1,4 @@
-app.controller('ChatController', ['$scope', '$http', 'deepstream', 'user', '$location', function($scope, $http, deepstream, user, $location) {
+app.controller('ChatController', ['$scope', '$http', 'deepstream', 'user', '$location', 'message', 'xmpp', function($scope, $http, deepstream, user, $location, message, xmpp) {
   /* Grab our user information and use it
     to set $scope variables, we use these
     variables to build the view. */
@@ -32,4 +32,9 @@ app.controller('ChatController', ['$scope', '$http', 'deepstream', 'user', '$loc
   } else {
     console.log("Not empty");
   }
+
+  message.getAll($scope.user).then(function(messages) {
+    console.log("messages: ", messages.data);
+  });
+
 }]);

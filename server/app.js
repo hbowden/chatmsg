@@ -5,6 +5,7 @@ var app = express();
 var bodyParser = require('body-parser');
 var path = require('path');
 var user = require('./routes/user');
+var message = require('./routes/message');
 var mongoose = require('mongoose');
 var passport = require('./strategies/userStrategy');
 var session = require('express-session');
@@ -35,6 +36,7 @@ app.use(express.static(path.join(__dirname, './public')));
 /* Middleware. */
 app.use(bodyParser.json());
 app.use('/user', user);
+app.use('/message', message);
 
 /* Handle index file separately */
 app.get('/', function(req, res) {
