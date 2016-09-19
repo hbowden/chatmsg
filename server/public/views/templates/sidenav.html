@@ -16,7 +16,12 @@
     </div>
     <div class="side-menu-container">
         <ul class="nav navbar-nav">
-            <li><div ng-repeat="contact in contacts" class="contact"><span class="glyphicon glyphicon-send"></span><p>{{contact.username}}</p></div></li>
+            <li>
+              <div ng-repeat="contact in contacts" ng-click="changeMessageView(contact)" class="contact">
+                <span class="glyphicon glyphicon-send"></span>
+                <p>{{contact.username}}</p>
+              </div>
+            </li>
         </ul>
     </div>
 </nav>

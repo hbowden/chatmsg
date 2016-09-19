@@ -12,6 +12,20 @@ app.factory('message', ['$http', function($http) {
     });
     return promise;
   }
+  function send(message) {
+    var promise = $http({
+      method: 'POST',
+      data: message,
+      url: "/xmpp/send"
+    }).then(function successCallback(response) {
+      return response;
+    }, function errorCallback(response) {
+      console.log("response: ", response);
+      return response;
+    });
+    return promise;
+  }
+
   function loadServices() {
     var promise = $http({
       method: 'GET',
@@ -26,6 +40,7 @@ app.factory('message', ['$http', function($http) {
   }
   return {
     getAll: getAll,
-    loadServices: loadServices
+    loadServices: loadServices,
+    send: send
   }
 }]);

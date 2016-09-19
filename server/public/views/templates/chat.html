@@ -12,6 +12,8 @@
             <div class="message" ng-repeat="message in messages">
               <p class="messageText"> {{message}} </p>
             </div>
+            <input ng-model="msg"></input>
+            <button ng-click="send(msg)">Send</button>
         </div>
     </div>
 </div>
