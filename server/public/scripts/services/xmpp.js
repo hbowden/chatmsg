@@ -1,13 +1,16 @@
 app.factory('xmpp', ['$http', function($http) {
-  var url = "";
-
-  function setupClient(jid, pass) {
-    var client = new XMPP.Client({
-      // websocket: { url: 'ws://localhost:5280/xmpp-websocket/' },
-      bosh: {url: url},
-      jid: jid,
-      password: pass
+  function setupClient(jid, pass, id) {
+    var promise = $http({
+      method: 'POST',
+      data: {jid: jid,
+             password: pass},
+      url: '/xmpp/' + id
+    }).then(function successCallback(response) {
+      return response;
+    }, function errorCallback(response) {
+      return response;
     });
+      return promise;
   }
 
   return {

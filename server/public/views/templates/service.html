@@ -11,16 +11,11 @@
       </div>
       <div class="modal-body">
         <label for="#serviceDropdown">Pick a chat service to add</label>
-        <div id="serviceDropdown" class="dropdown">
-          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Pick Service
-          <span class="caret"></span></button>
-          <ul class="dropdown-menu">
-            <li ng-repeat="service in services"><a>{{service.name}}</a></li>
-         </ul>
-        </div>
+          <select ng-model="addService" ng-options="item for item in services">Pick Service</select>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button ng-click="saveService(addService)" type="button" class="btn btn-default" data-dismiss="modal" data-toggle="modal" data-target="#addXMPPModal">Add</button>
       </div>
     </div>
   </div>

@@ -8,6 +8,7 @@ app.controller('ChatController', ['$scope', '$http', 'deepstream', 'user', '$loc
   $scope.user = user;
 
   var result = true;
+  var setupService;
 
   /* Check if the user information is empty. This can happen if the
     user reloads the page. If the user object is empty, load the user
@@ -33,8 +34,26 @@ app.controller('ChatController', ['$scope', '$http', 'deepstream', 'user', '$loc
     console.log("Not empty");
   }
 
+  message.loadServices().then(function(services) {
+    console.log("Service: ", services.data);
+    $scope.services = services.data;
+  });
+
   message.getAll($scope.user).then(function(messages) {
     console.log("messages: ", messages.data);
   });
 
+  $scope.saveService = function(service) {
+    console.log("Click: ", service);
+    setupService = service;
+  };
+
+  $scope.handleAddService = function(service) {
+    if(setupService == 'xmpp') {
+      xmpp.setupClient(service.jid, service.password, user._id).then(function(response) {
+        console.log("response: ", response);
+      });
+      return;
+    }
+  };
 }]);

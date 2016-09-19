@@ -1,0 +1,23 @@
+<!-- Modal -->
+<div id="addXMPPModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Xmpp</h4>
+      </div>
+      <div class="modal-body">
+        <label for="#jid">Your JID</label>
+        <input id="jid" type="text" ng-model="xmpp.jid">
+        <label for="#password">Your Password</label>
+        <input id="username" type="password" ng-model="xmpp.password">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button ng-click="handleAddService(xmpp)" type="button" class="btn btn-default" data-dismiss="modal">Add</button>
+      </div>
+    </div>
+  </div>
+</div>

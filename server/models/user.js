@@ -10,6 +10,9 @@ var UserSchema = new Schema({
     contacts: [
       {type: Schema.Types.ObjectId, ref: 'Contact'}
     ],
+    services: [
+      {type: Schema.Types.ObjectId, ref: 'Services'}
+    ],
     icon: {type: String}
 });
 

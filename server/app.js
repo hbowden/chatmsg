@@ -6,6 +6,7 @@ var bodyParser = require('body-parser');
 var path = require('path');
 var user = require('./routes/user');
 var message = require('./routes/message');
+var xmpp = require('./routes/xmpp');
 var mongoose = require('mongoose');
 var passport = require('./strategies/userStrategy');
 var session = require('express-session');
@@ -37,11 +38,17 @@ app.use(express.static(path.join(__dirname, './public')));
 app.use(bodyParser.json());
 app.use('/user', user);
 app.use('/message', message);
+app.use('/xmpp', xmpp);
 
 /* Handle index file separately */
 app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname, './public/views/index.html'));
-})
+});
+
+app.get('/services', function(req, res) {
+  var services = ['irc', 'xmpp', 'otr', 'aim'];
+  res.send(services);
+});
 
 app.post('/',
     passport.authenticate('local', {

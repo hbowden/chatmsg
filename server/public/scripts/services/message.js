@@ -12,7 +12,20 @@ app.factory('message', ['$http', function($http) {
     });
     return promise;
   }
+  function loadServices() {
+    var promise = $http({
+      method: 'GET',
+      url: "/services"
+    }).then(function successCallback(response) {
+      return response;
+    }, function errorCallback(response) {
+      console.log("response: ", response);
+      return response;
+    });
+    return promise;
+  }
   return {
-    getAll: getAll
+    getAll: getAll,
+    loadServices: loadServices
   }
 }]);
