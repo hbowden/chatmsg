@@ -3,9 +3,7 @@ var Schema = mongoose.Schema;
 
 var Contact = new Schema({
     username: {type: String, required: true},
-    services: [
-      {type: Schema.Types.ObjectId, ref: 'Service'}
-    ]
+    service: {type: String, required: true}
 });
 
 module.exports = mongoose.model('Contact', Contact);

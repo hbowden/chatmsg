@@ -10,10 +10,12 @@
         <h4 class="modal-title">Add Contact</h4>
       </div>
       <div class="modal-body">
-        <p>Some text in the modal.</p>
+        <label for="#serviceDropdown">What chat service does your friend use?</label>
+        <select ng-model="addService" ng-options="item for item in services">Pick Service</select>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button ng-click="saveContactService(addService)" type="button" class="btn btn-default" data-dismiss="modal" data-toggle="modal" data-target="#XMPPContactModal">Add</button>
       </div>
     </div>
   </div>

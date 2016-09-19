@@ -7,6 +7,7 @@ var path = require('path');
 var user = require('./routes/user');
 var message = require('./routes/message');
 var xmpp = require('./routes/xmpp');
+var contacts = require('./routes/contacts');
 var mongoose = require('mongoose');
 var passport = require('./strategies/userStrategy');
 var session = require('express-session');
@@ -39,6 +40,7 @@ app.use(bodyParser.json());
 app.use('/user', user);
 app.use('/message', message);
 app.use('/xmpp', xmpp);
+app.use('/contacts', contacts);
 
 /* Handle index file separately */
 app.get('/', function(req, res) {

@@ -9,6 +9,7 @@ app.controller('ChatController', ['$scope', '$http', 'deepstream', 'user', '$loc
 
   var result = true;
   var setupService;
+  var contactService;
 
   /* Check if the user information is empty. This can happen if the
     user reloads the page. If the user object is empty, load the user
@@ -56,4 +57,30 @@ app.controller('ChatController', ['$scope', '$http', 'deepstream', 'user', '$loc
       return;
     }
   };
+
+  $scope.saveContactService = function(service) {
+    contactService = service;
+  }
+
+  $scope.handleAddContact = function(contact) {
+    contact.service = contactService;
+    var id = user._id;
+    $http({
+      method: 'POST',
+      data: contact,
+      url: '/contacts/' + id
+    }).then(function successCallback(response) {
+       console.log('id: ', id);
+       $http({
+         method: 'GET',
+         url: '/contacts/' + id
+       }).then(function successCallback(response) {
+          console.log("response: ", response);
+          $scope.contacts = response.data;
+          return;
+       });
+    }, function errorCallback(response) {
+       console.log("Error posting new contact: ", response.data);
+    });
+  }
 }]);
